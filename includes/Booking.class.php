@@ -78,6 +78,8 @@ class rtbBooking {
 			'party' => '',
 			'email' => '',
 			'phone' => '',
+			'room' => '',
+			'duration' => '',
 			'date_submission' => '',
 			'logs' => array(),
 			'ip' => '',
@@ -94,6 +96,8 @@ class rtbBooking {
 		$this->party = $meta['party'];
 		$this->email = $meta['email'];
 		$this->phone = $meta['phone'];
+		$this->room = $meta['room'];
+		$this->duration = $meta['duration'];
 		$this->date_submission = $meta['date_submission'];
 		$this->logs = $meta['logs'];
 		$this->ip = $meta['ip'];
@@ -441,6 +445,12 @@ class rtbBooking {
 			);
 		}
 
+		// Abschlagsplatz
+		$this->room = empty( $_POST['rtb-room'] ) ? '' : sanitize_text_field( stripslashes_deep( $_POST['rtb-room'] ) );
+
+		// Mietdauer
+		$this->duration = empty( $_POST['rtb-duration'] ) ? '' : sanitize_text_field( stripslashes_deep( $_POST['rtb-duration'] ) );
+
 		// Phone
 		$this->phone = empty( $_POST['rtb-phone'] ) ? '' : sanitize_text_field( stripslashes_deep( $_POST['rtb-phone'] ) );
 		$phone_required = $rtb_controller->settings->get_setting( 'require-phone' );
@@ -652,6 +662,8 @@ class rtbBooking {
 			'party' 			=> $this->party,
 			'email' 			=> $this->email,
 			'phone' 			=> $this->phone,
+			'room'				=> $this->room,
+			'duration'			=> $this->duration,
 			'date_submission' 	=> current_time( 'timestamp' ),
 			'ip'                => $this->ip,
 		);

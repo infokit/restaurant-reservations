@@ -360,6 +360,8 @@ class rtbBookingsTable extends WP_List_Table {
 			'name'  	=> __( 'Name', 'restaurant-reservations' ),
 			'email'  	=> __( 'Email', 'restaurant-reservations' ),
 			'phone'  	=> __( 'Phone', 'restaurant-reservations' ),
+			'room'		=> __( 'Raum', 'restaurant-reservations' ),
+			'duration'	=> __( 'Dauer', 'restaurant-reservations' ),
 			'status'  	=> __( 'Status', 'restaurant-reservations' ),
 			'details'  	=> __( 'Details', 'restaurant-reservations' ),
 		);
@@ -424,6 +426,14 @@ class rtbBookingsTable extends WP_List_Table {
 				$value .= '<div class="actions">';
 				$value .= '<a href="#" data-id="' . esc_attr( $booking->ID ) . '" data-action="email" data-email="' . esc_attr( $booking->email ) . '" data-name="' . $booking->name . '">' . __( 'Send Email', 'restaurant-reservations' ) . '</a>';
 				$value .= '</div>';
+				break;
+
+			case 'room' :
+				$value = $booking->room;
+				break;
+
+			case 'duration' :
+				$value = $booking->duration;
 				break;
 
 			case 'phone' :

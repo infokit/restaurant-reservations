@@ -61,7 +61,7 @@ class rtbNotifications {
 		require_once( RTB_PLUGIN_DIR . '/includes/Notification.Email.class.php' );
 
 		$this->notifications = array(
-			new rtbNotificationEmail( 'new_submission', 'user' ),
+			// Defused due to redundancy new rtbNotificationEmail( 'new_submission', 'user' ),
 			new rtbNotificationEmail( 'pending_to_confirmed', 'user' ),
 			new rtbNotificationEmail( 'pending_to_closed', 'user' ),
 		);
