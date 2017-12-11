@@ -789,30 +789,30 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 
 		$options = array();
 
-		$options['TrackMan 4 Links'] = 'TrackMan 4 Links';
-		$options['TrackMan 4 Rechts'] = 'TrackMan 4 Rechts';
-		$options['TrackMan 4 Links und Rechts'] = 'TrackMan 4 Links und Rechts';
-                $options['Trainingsraum'] = 'Trainingsraum';
+		$options['TrackMan Box 1'] = 'TrackMan Box 1';
+		$options['TrackMan Box 2'] = 'TrackMan Box 2';
+		$options['TrackMan Box 1 & 2'] = 'TrackMan Box 1 & 2';
+		$options['Trainingsraum'] = 'Trainingsraum';
 
 		return apply_filters( 'rtb_form_room_options', $options );
 	}
 
-        /**
-         * Get options for the room select field in the booking form
-         * @since 1.3
-         */
-        public function get_form_duration_options() {
+	/**
+	* Get options for the room select field in the booking form
+	* @since 1.3
+	*/
+	public function get_form_duration_options() {
 
-                $options = array();
+		$options = array();
 
-                $options['1 Std.'] = '1 Stunde';
-                $options['2 Std.'] = '2 Stunden';
-                $options['3 Std.'] = '3 Stunden';
-                $options['4 Std.'] = '4 Stunden';
+		$options['1 Std.'] = '1 Stunde';
+		$options['2 Std.'] = '2 Stunden';
+		$options['3 Std.'] = '3 Stunden';
+		$options['4 Std.'] = '4 Stunden';
 		$options['1 Tag'] = '1 Tag';
 
-                return apply_filters( 'rtb_form_room_options', $options );
-        }
+		return apply_filters( 'rtb_form_room_options', $options );
+	}
 
 
 	/**
