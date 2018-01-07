@@ -798,6 +798,22 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 	}
 
 	/**
+	 * Get options for the get_form_playtype select field in the booking form
+	 * @since 1.3
+	 */
+	public function get_form_playtype_options() {
+
+		$options = array();
+
+		$options['Keine Angabe'] = 'Bitte wählen...';
+		$options['Training'] = 'Training';
+		$options['Trainerstunde'] = 'Trainerstunde';
+		$options['Game'] = 'Game';
+
+		return apply_filters( 'rtb_form_playtype_options', $options );
+	}
+
+	/**
 	* Get options for the room select field in the booking form
 	* @since 1.3
 	*/
@@ -894,6 +910,15 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 						'callback'		=> 'rtb_print_form_select_field',
 						'callback_args'	=> array(
 							'options'	=> $this->get_form_room_options(),
+						),
+						'required'		=> true,
+					),
+					'playtype'		=> array(
+						'title'			=> __( 'Spielart', 'restaurant-reservations' ),
+						'request_input'	=> empty( $request->playtype ) ? '' : $request->playtype,
+						'callback'		=> 'rtb_print_form_select_field',
+						'callback_args'	=> array(
+							'options'	=> $this->get_form_playtype_options(),
 						),
 						'required'		=> true,
 					),

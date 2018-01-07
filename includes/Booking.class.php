@@ -79,6 +79,7 @@ class rtbBooking {
 			'email' => '',
 			'phone' => '',
 			'room' => '',
+			'playtype' => '',
 			'duration' => '',
 			'date_submission' => '',
 			'logs' => array(),
@@ -97,6 +98,7 @@ class rtbBooking {
 		$this->email = $meta['email'];
 		$this->phone = $meta['phone'];
 		$this->room = $meta['room'];
+		$this->playtype = $meta['playtype'];
 		$this->duration = $meta['duration'];
 		$this->date_submission = $meta['date_submission'];
 		$this->logs = $meta['logs'];
@@ -448,6 +450,9 @@ class rtbBooking {
 		// Abschlagsplatz
 		$this->room = empty( $_POST['rtb-room'] ) ? '' : sanitize_text_field( stripslashes_deep( $_POST['rtb-room'] ) );
 
+		// Simulator oder Training
+		$this->playtype = empty( $_POST['rtb-playtype'] ) ? '' : sanitize_text_field( stripslashes_deep( $_POST['rtb-playtype'] ) );
+
 		// Mietdauer
 		$this->duration = empty( $_POST['rtb-duration'] ) ? '' : sanitize_text_field( stripslashes_deep( $_POST['rtb-duration'] ) );
 
@@ -663,6 +668,7 @@ class rtbBooking {
 			'email' 			=> $this->email,
 			'phone' 			=> $this->phone,
 			'room'				=> $this->room,
+			'playtype'			=> $this->playtype,
 			'duration'			=> $this->duration,
 			'date_submission' 	=> current_time( 'timestamp' ),
 			'ip'                => $this->ip,

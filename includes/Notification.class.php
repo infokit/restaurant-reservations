@@ -86,6 +86,7 @@ abstract class rtbNotification {
 			'{phone}'		=> $this->booking->phone,
 			'{message}'		=> $this->booking->message,
 			'{room}'		=> $this->booking->room,
+			'{playtype}'		=> $this->booking->playtype,
 			'{duration}'		=> $this->booking->duration,
 			'{bookings_link}'	=> '<a href="' . admin_url( 'admin.php?page=rtb-bookings&status=pending' ) . '">' . __( 'View pending bookings', 'restaurant-reservations' ) . '</a>',
 			'{confirm_link}'	=> '<a href="' . admin_url( 'admin.php?page=rtb-bookings&rtb-quicklink=confirm&booking=' . esc_attr( $this->booking->ID ) ) . '">' . __( 'Confirm this booking', 'restaurant-reservations' ) . '</a>',
