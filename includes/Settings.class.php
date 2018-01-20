@@ -827,7 +827,7 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 		$options['4 Std.'] = '4 Stunden';
 		$options['1 Tag'] = '1 Tag';
 
-		return apply_filters( 'rtb_form_room_options', $options );
+		return apply_filters( 'rtb_form_duration_options', $options );
 	}
 
 
